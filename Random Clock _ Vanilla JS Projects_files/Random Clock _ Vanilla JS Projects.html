@@ -54,12 +54,24 @@
         const topOffset = Math.random() * 100;
         const leftOffset = Math.random() * 100;
 
-        const [r, g, b] = new Array(3).fill().map(() => Math.random() * 255);
+        const [s, l] = ["75%", "75%"];
+
+        // solution 1: using rbg
+        // const [r, g, b] = new Array(3).fill().map(() => Math.random() * 255);
+
+        // element.style.cssText = `
+        // top: ${topOffset}%;
+        // left: ${leftOffset}%;
+        // color: rgb(${r}, ${g}, ${b});
+        // `;
+
+        //solution 2: using hsl
+        const h = Math.random() * 365;
 
         element.style.cssText = `
 		top: ${topOffset}%;
 		left: ${leftOffset}%;
-		color: rgb(${r}, ${g}, ${b});
+		color: hsl(${h} ${s} ${l});
 		`;
       }
 
